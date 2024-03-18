@@ -71,4 +71,4 @@ get_header();
 get_footer();
 ?>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZLg1ui8iNibodZ3MqgT0Pd3gY5ZEc0U&callback=initMap"></script>
+
