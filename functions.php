@@ -226,3 +226,9 @@ function pmd_register_custom_post_types() {
     register_post_type( 'testimonials', $args );
 }
 add_action( 'init', 'pmd_register_custom_post_types' );
+
+function my_acf_google_map_api( $api ){
+    $api['key'] = 'AIzaSyC5TXwEkIUMHlP-UzWM3vZQl87IL5CmJZM';
+    return $api;
+}
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');

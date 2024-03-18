@@ -19,20 +19,18 @@ get_header();
 
 		<?php
 		while ( have_posts() ) :
-			the_post();
-
-			// get_template_part( 'template-parts/content', 'page' );			
+			the_post();			
 
 		?>
 
 		<section class="map">
-		<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'contact_map' ) ) {
-					the_field( 'contact_map' );
-				}
+			<?php
+			if (function_exists('get_field') && get_field('contact_map')) {
+			the_field('contact_map');
+			} else {
+			echo '<p>Map not available.</p>';
 			}
-		?>
+			?>
 		</section>
 
 		<section class="contact-locations">
@@ -45,11 +43,11 @@ get_header();
 					the_sub_field( 'location_name' );
 					 echo "</p>";
 					 echo "<p>"; 
-					the_sub_field( 'location_hours' );
-					echo "</p>";
-					echo "<p>"; 
 					the_sub_field( 'location_address' );
 					echo "</p>";
+					 echo "<p>"; 
+					the_sub_field( 'location_hours' );
+					echo "</p>";					
 					echo "<p>";  
 					the_sub_field( 'location_phone' );
 					echo "</p>";
@@ -71,3 +69,6 @@ get_header();
 
 <?php
 get_footer();
+?>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZLg1ui8iNibodZ3MqgT0Pd3gY5ZEc0U&callback=initMap"></script>
