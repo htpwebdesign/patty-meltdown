@@ -138,10 +138,44 @@ add_action( 'widgets_init', 'patty_meltdown_widgets_init' );
  * Enqueue scripts and styles.
  */
 function patty_meltdown_scripts() {
-	wp_enqueue_style( 'patty-meltdown-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 
+		'patty-meltdown-style', 
+		get_stylesheet_uri(), 
+		array(), 
+		_S_VERSION
+	 );
 	wp_style_add_data( 'patty-meltdown-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'patty-meltdown-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 
+		'patty-meltdown-navigation', 
+		get_template_directory_uri() . '/js/navigation.js', 
+		array(),
+		 _S_VERSION, true );
+
+		 if ( is_front_page() ) {
+			wp_enqueue_style(
+				'swiper-styles',
+				get_template_directory_uri() . '/css/swiper-bundle.css',
+				array(),
+				'11.0.5'
+			);
+	
+			wp_enqueue_script(
+				'swiper-scripts',
+				get_template_directory_uri() . '/js/swiper-bundle.min.js',
+				array(),
+				'11.0.5',
+				array( 'strategy' => 'defer' ),
+			);
+	
+			wp_enqueue_script(
+				'swiper-settings',
+				get_template_directory_uri() . '/js/swiper-settings.js',
+				array( 'swiper-scripts' ),
+				_S_VERSION,
+				array( 'strategy' => 'defer' ),
+			);
+		}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
