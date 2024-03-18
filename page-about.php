@@ -25,22 +25,22 @@ get_header();
 
 		?>
 
-		<section class="about-intro">
-		<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'founders_text' ) ) {
-					the_field( 'founders_text' );
-				}
-			}
-		?>
-		</section>
-
 		<section class="founders-image">
 		<?php
 			if ( function_exists( 'get_field' ) ) {
 			$founders_image_id = get_field( 'founders_image' );
 			if ( $founders_image_id ) {
 				echo wp_get_attachment_image( $founders_image_id, 'full' ); // 'full' is the image size
+				}
+			}
+		?>
+		</section>
+
+		<section class="founders-text">
+		<?php
+			if ( function_exists( 'get_field' ) ) {
+				if ( get_field( 'founders_text' ) ) {
+					the_field( 'founders_text' );
 				}
 			}
 		?>
@@ -60,55 +60,28 @@ get_header();
 		</section>
 
 
-		<section class="cta-1">
-			<h3>Menu</h3>
-			<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'cta_text' ) ) {
-					the_field( 'cta_text' );
-				}
-			}
-		?>
-		</section>
-			
+		<section class="cta-menu">					
 
-
-		<section class="cta-1-link">
 		<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'cta_link' ) ) {
-					the_field( 'cta_link' );
-				}
+		if ( function_exists( 'get_field' ) ) {
+			if ( get_field( 'cta_text' ) && get_field( 'cta_link' ) ) {				
+				echo '<a href="' . esc_url( get_field( 'cta_link' ) ) . '"><button>' . get_field( 'cta_text' ) . '</button></a>';
 			}
+		}
 		?>
 		</section>
+		
 
-		<section class="cta-2">
-			<h3>Gift card</h3>
-			<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'cta_giftcard' ) ) {
-					the_field( 'cta_giftcard' );
-				}
-			}
-		?>
-		</section>
-			
-
-
-		<section class="cta-1-link">
+		<section class="cta-giftcard">	
+		
 		<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'cta_giftcard_link' ) ) {
-					the_field( 'cta_giftcard_link' );
-				}
+		if ( function_exists( 'get_field' ) ) {
+			if ( get_field( 'cta_giftcard' ) && get_field( 'cta_giftcard_link' ) ) {				
+				echo '<a href="' . esc_url( get_field( 'cta_giftcard_link' ) ) . '"><button>' . get_field( 'cta_giftcard' ) . '</button></a>';
 			}
+		}
 		?>
 		</section>
-
-		<!-- <section class="cta-2">
-
-		<section class="cta-2-link"> -->
 
 		<?php
 		endwhile; // End of the loop.

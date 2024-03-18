@@ -40,29 +40,27 @@ get_header();
 			if ( have_rows( 'contact_locations' ) ) :
 				while ( have_rows( 'contact_locations' ) ) : the_row();
 					// Output your repeater field values here
+
+					echo "<p>"; 
 					the_sub_field( 'location_name' );
+					 echo "</p>";
+					 echo "<p>"; 
 					the_sub_field( 'location_hours' );
+					echo "</p>";
+					echo "<p>"; 
 					the_sub_field( 'location_address' );
+					echo "</p>";
+					echo "<p>";  
 					the_sub_field( 'location_phone' );
+					echo "</p>";
+
 				endwhile;
 			else :
 				// No rows found
 			endif;
 			?>
 		</section>
-
-
-		<h2>Our mission</h2>
-		<!-- need to make titles dynamic -->
-		<section class="company-values">
-		<?php
-			if ( function_exists( 'get_field' ) ) {
-				if ( get_field( 'company_values' ) ) {
-					the_field( 'company_values' );
-				}
-			}
-		?>
-		</section>
+		
 
 
 		<?php
