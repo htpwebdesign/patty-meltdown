@@ -232,3 +232,18 @@ function my_acf_google_map_api( $api ){
     return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
+
+add_action('woocommerce_single_product_summary', 'display_product_specifications', 25);
+function display_product_specifications() {
+//ACF field in here
+$field_value = get_field('dietary_allergen_info');
+
+    // Check if the field has a value
+    if ($field_value) {
+        echo '<div class="product-dietary-allergen-info">';
+        echo '<h3>Dietary and allergen information</h3>';
+        echo '<p>' . $field_value . '</p>';
+        echo '</div>';
+    }
+
+}
