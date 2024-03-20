@@ -44,14 +44,14 @@ do_action('woocommerce_before_main_content');
 	// Output navigation links
 	echo '<nav class="product-nav">';
 	foreach ($categories as $category) {
-		$image_src = wp_get_attachment_image_src(get_term_meta($category->term_id, 'thumbnail_id', true), 'thumbnail');
+		$image_src = wp_get_attachment_image_src(get_term_meta($category->term_id, 'thumbnail_id', true), 'medium');
 
 		if ($image_src) {
 			echo '<a href="#' . esc_attr($category->slug) . '">';
 			echo '<img src="' . esc_url($image_src[0]) . '" alt="' . esc_attr($category->name) . '">';
 			echo '</a>';
 		} else {
-			echo "<p>this should be an image but its prob not showing cuz I didnt set one or smt ggs it be like that</p>";
+			wp_get_attachment_image(11, 'medium');
 		}
 		echo '<a href="#' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</a>';
 	}

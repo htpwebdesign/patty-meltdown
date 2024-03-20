@@ -26,7 +26,7 @@ get_header();
 
 	?>
 
-		<section class="founders-image">
+		<section class="about-founders">
 			<?php
 			if (function_exists('get_field')) {
 				$founders_image_id = get_field('founders_image');
@@ -35,9 +35,7 @@ get_header();
 				}
 			}
 			?>
-		</section>
 
-		<section class="founders-text">
 			<?php
 			if (function_exists('get_field')) {
 				if (get_field('founders_text')) {
@@ -48,9 +46,10 @@ get_header();
 		</section>
 
 
-		<h2>Our mission</h2>
 		<!-- need to make titles dynamic -->
-		<section class="company-values">
+		<section class="about-company-values">
+			<h2>Our mission</h2>
+
 			<?php
 			if (function_exists('get_field')) {
 				if (get_field('company_values')) {
@@ -61,24 +60,17 @@ get_header();
 		</section>
 
 
-		<section class="cta-menu">
+		<nav class="about-cta-menu">
 
 			<?php
 			if (function_exists('get_field')) {
 				if (get_field('cta_text') && get_field('cta_link')) {
-					echo '<a href="' . esc_url(get_field('cta_link')) . '"><button>' . get_field('cta_text') . '</button></a>';
+					echo '<a href="' . esc_url(get_field('cta_link')) . '">' . get_field('cta_text') . '</a>';
 				}
 			}
-			?>
-		</section>
-
-
-		<section class="cta-giftcard">
-
-			<?php
 			if (function_exists('get_field')) {
 				if (get_field('cta_giftcard') && get_field('cta_giftcard_link')) {
-					echo '<a href="' . esc_url(get_field('cta_giftcard_link')) . '"><button>' . get_field('cta_giftcard') . '</button></a>';
+					echo '<a href="' . esc_url(get_field('cta_giftcard_link')) . '">' . get_field('cta_giftcard') . '</a>';
 				}
 			}
 
@@ -86,7 +78,7 @@ get_header();
 			get_template_part("template-parts/testimonial-randomizer");
 
 			?>
-		</section>
+		</nav>
 
 	<?php
 	endwhile; // End of the loop.

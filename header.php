@@ -57,7 +57,9 @@
 						'menu_id'        => 'header-menu',
 					)
 				);
-
+				if (function_exists('patty_meltdown_woocommerce_header_cart')) {
+					patty_meltdown_woocommerce_header_cart();
+				}
 				?>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->

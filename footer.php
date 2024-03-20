@@ -14,7 +14,7 @@
 
 <footer id="colophon" class="site-footer">
 	<div class="site-info">
-		<div class="footer-left">
+		<nav class="footer-left">
 			<?php
 			wp_nav_menu(
 				array(
@@ -22,9 +22,9 @@
 				)
 			);
 			?>
-		</div>
+		</nav>
 
-		<div class="footer-right">
+		<nav class="footer-right">
 			<?php
 			wp_nav_menu(
 				array(
@@ -32,7 +32,7 @@
 				)
 			);
 			?>
-		</div>
+		</nav>
 
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
