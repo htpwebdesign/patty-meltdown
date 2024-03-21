@@ -221,12 +221,12 @@ if (!function_exists('patty_meltdown_woocommerce_header_cart')) {
 
 
 add_action('woocommerce_single_product_summary', 'display_product_specifications', 25);
-function display_product_specifications()
-{
+function display_product_specifications() {
 	//ACF field in here
 	$field_value = get_field('dietary_allergen_info');
 
 	// Check if the field has a value
+	if (function_exists('get_field')) { 
 	if ($field_value) {
 		echo '<section class="product-dietary-allergen-info">';
 		echo '<h3>Dietary and allergen information</h3>';
@@ -234,3 +234,5 @@ function display_product_specifications()
 		echo '</section>';
 	}
 }
+}
+

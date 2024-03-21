@@ -33,11 +33,6 @@ get_header();
 				if ($founders_image_id) {
 					echo wp_get_attachment_image($founders_image_id, 'full'); // 'full' is the image size
 				}
-			}
-			?>
-
-			<?php
-			if (function_exists('get_field')) {
 				if (get_field('founders_text')) {
 					the_field('founders_text');
 				}
@@ -46,14 +41,15 @@ get_header();
 		</section>
 
 
-		<!-- need to make titles dynamic -->
+		
 		<section class="about-company-values">
-			<h2>Our mission</h2>
-
 			<?php
 			if (function_exists('get_field')) {
-				if (get_field('company_values')) {
-					the_field('company_values');
+				if ($company_values_heading = get_field('company_values_heading')) {
+					echo '<h2>' .$company_values_heading.'</h2>';
+				}
+				if ($company_values = get_field('company_values')) {
+					echo $company_values;
 				}
 			}
 			?>
