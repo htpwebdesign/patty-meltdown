@@ -1,21 +1,29 @@
 @media screen and (min-width: 768px) {
+  .col2-set {
+    .form-row-first {
+      float: left;
+      margin-right: $columns__margin;
+    }
 
-	.col2-set {
+    .form-row-last {
+      float: right;
+      margin-right: 0;
+    }
 
-		.form-row-first {
-			float: left;
-			margin-right: $columns__margin;
-		}
+    .form-row-first,
+    .form-row-last {
+      @include column-width(2);
+    }
+  }
+}
+.wc-block-cart__empty-cart__title {
+  display: none;
+}
 
-		.form-row-last {
-			float: right;
-			margin-right: 0;
-		}
+.wp-block-separator.is-style-dots:before {
+  display: none;
+}
 
-		.form-row-first,
-		.form-row-last {
-
-			@include column-width(2);
-		}
-	}
+.wp-block-heading.has-text-align-center {
+  display: none;
 }

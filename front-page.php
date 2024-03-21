@@ -56,7 +56,14 @@ get_header();
 
 
     <section>
-        <h2>Featured Menu Items</h2>
+        <?php
+        if (function_exists('get_field')) {
+                $featured_menu_heading = get_field('featured_menu_heading');
+                if ($featured_menu_heading) {
+                    echo "<h2>" . $featured_menu_heading . "</h2>";
+                }
+            }
+        ?>
 
         <?php
             if (function_exists('get_field')) {
@@ -84,14 +91,31 @@ get_header();
     </section>
 
     <section>
-        <h2>Testimonials</h2>
+        <?php
+        if (function_exists('get_field')) {
+                $testimonials_heading = get_field('testimonials_heading');
+                if ($testimonials_heading) {
+                    echo "<h2>" . $testimonials_heading . "</h2>";
+                }
+            }
+        ?>
+    
+
         <?php
             get_template_part("template-parts/testimonial-randomizer");
         ?>
 
+    </section>
 
-
-        <h2>Gift Card</h2>
+    <section>
+        <?php
+        if (function_exists('get_field')) {
+                $gift_card_heading = get_field('gift_card_heading');
+                if ($gift_card_heading) {
+                    echo "<h2>" . $gift_card_heading . "</h2>";
+                }
+            }
+        ?>
         <?php
             if (function_exists('get_field')) {
                 if (get_field('gift_card_text_blurb')) {
@@ -107,7 +131,14 @@ get_header();
     </section>
 
     <section>
-        <h2>Instagram</h2>
+        <?php
+        if (function_exists('get_field')) {
+                $instagram_heading = get_field('instagram_heading');
+                if ($instagram_heading) {
+                    echo "<h2>" . $instagram_heading . "</h2>";
+                }
+            }
+        ?>
         <?php
             echo do_shortcode("[instagram-feed feed=1]");
         ?>
@@ -116,7 +147,14 @@ get_header();
 
 
     <section class="contact-locations">
-        <h2>Contact</h2>
+        <?php
+        if (function_exists('get_field')) {
+                $contact_locations_heading = get_field('contact_locations_heading');
+                if ($contact_locations_heading) {
+                    echo "<h2>" . $contact_locations_heading . "</h2>";
+                }
+            }
+        ?>
 
         <?php
             get_template_part("template-parts/location")
