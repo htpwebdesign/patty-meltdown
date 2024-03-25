@@ -118,8 +118,14 @@ add_action('after_setup_theme', 'patty_meltdown_content_width', 0);
 /**
  * Enqueue scripts and styles.
  */
-function patty_meltdown_scripts()
-{
+function patty_meltdown_scripts() {
+	wp_enqueue_style (
+		'pmd-googlefonts',
+		'https://fonts.googleapis.com/css2?family=Protest+Strike&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap',
+		array(),
+		null
+	);
+	
 	wp_enqueue_style(
 		'patty-meltdown-style',
 		get_stylesheet_uri(),
@@ -286,3 +292,6 @@ function wpdocs_map_scripts() {
     }
 }
 add_action('wp_enqueue_scripts', 'wpdocs_map_scripts');
+
+// login
+get_template_part('template-parts/login');
