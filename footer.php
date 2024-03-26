@@ -12,7 +12,7 @@
 
 ?>
 
-<footer id="colophon" class="site-footer">
+<footer id="colophon" class="site-footer full-bleed">
 	<div class="site-info">
 		<nav class="footer-left">
 			<?php
