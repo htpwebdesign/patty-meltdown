@@ -149,7 +149,7 @@ get_header();
 
 
 
-    <section class="contact-locations">
+    <section>
         <?php
         if (function_exists('get_field')) {
                 $contact_locations_heading = get_field('contact_locations_heading');
