@@ -2,9 +2,16 @@
 --------------------------------------------- */
 @import "navigation/navigation";
 
-/* Posts and pages
+/* Footer
+--------------------------------------------- */
+@import "navigation/footer";
+
+/* Posts and pages, Content
 --------------------------------------------- */
 @import "content/posts-and-pages";
+@import "content/gift-card";
+@import "content/location-card";
+@import "content/map";
 
 /* Comments
 --------------------------------------------- */
@@ -17,11 +24,6 @@
 /* Media
 --------------------------------------------- */
 @import "media/media";
-
-/* Captions
---------------------------------------------- */
 @import "media/captions";
-
-/* Galleries
---------------------------------------------- */
 @import "media/galleries";
+@import "media/carousel";

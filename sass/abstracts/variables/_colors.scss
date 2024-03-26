@@ -1,20 +1,36 @@
-$color__background-body: #28110B;
+$brand__dark: #28110B;
+// $brand__dark: #220d09;
+$brand__light: #FBDBD5;
+    $brand__light75: #fbdbd575;
+    $brand__light90: #fbdbd590;
+$brand__primary: #FF9D3C;
+// $brand__primary: #ffa851;
+// $brand__primary: #ffae5c;
+// $brand__secondary: #FF6F35;
+$brand__secondary: #ff813d;
+$brand__accent: #932920;
+    $brand__accent50: #93292050;
+    $brand__accent75: #93292075;
+
+$color__background-body: $brand__dark;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
-$color__background-button: #e6e6e6;
+$color__background-button: linear-gradient(to right, $brand__secondary, $brand__primary);
+$color__background-button-hover: $brand__primary;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
 $color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: #FF9D3C; //royalblue
-$color__link-visited: #800080; //purple
-$color__link-hover: #191970; //midnightblue
-$color__text-main: #FBDBD5;
+$color__text-input: $brand__light90;
+$color__text-input-focus: $brand__light;
+$color__link: $brand__primary;
+$color__link-visited: $brand__accent;
+$color__link-hover: $brand__secondary;
+$color__text-main: $brand__light;
 
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
-$color__border-abbr: #666;
+// $color__border-button: #ccc #ccc #bbb;
+$color__border-button: $brand__accent;
+$color__border-button-hover: $brand__accent;
+$color__border-button-focus: $brand__primary;
+$color__border-input: $brand__accent;
+$color__border-abbr: $brand__accent;
