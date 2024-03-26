@@ -1,16 +1,25 @@
+
 <?php
+		
+			get_template_part( 'template-parts/content', 'page' );?>
+			
+			<?php if( have_rows('locations_map') ): ?>
+				<div class="acf-map" data-zoom="16">
+					<?php while ( have_rows('locations_map') ) : the_row();?>
+						<?php $location = get_sub_field('map'); ?>
+                       
+						<div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" 
+											data-lng="<?php echo esc_attr($location['lng']); ?>">
+							<p><?php the_sub_field('title')?></p>
+                            <p><?php echo esc_html($location['address'])?></p>
+						</div>
+				<?php endwhile; ?>
+				</div>
+			<?php endif; ?>
+			 
+		
 
-?>
 
-<section class="map">
-    <?php
-    if (function_exists('get_field') && get_field('contact_map', 23)) {
-        the_field('contact_map', 23);
-    } else {
-        echo '<p>Map not available.</p>';
-    }
-    ?>
-</section>
 
 <section class="contact-locations">
 
