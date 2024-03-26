@@ -14,5 +14,5 @@ if ($query->have_posts()) {
         the_content();
     }
     wp_reset_postdata();
-    echo "<section/>";
+    echo "</section>";
 }
