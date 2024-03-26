@@ -18,6 +18,10 @@ get_header();
 
 <main id="primary" class="site-main">
 
+	<header class="page-header">
+		<h1 class="page-title"><?php esc_html_e( 'About', 'patty-meltdown' ); ?></h1>
+	</header><!-- .page-header -->
+
 	<?php
 	while (have_posts()) :
 		the_post();

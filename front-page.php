@@ -20,6 +20,9 @@ get_header();
 
 
     <section>
+        <header class="page-header">
+            <h1 class="page-title"><?php esc_html_e( 'Patty Meltdown', 'patty-meltdown' ); ?></h1>
+        </header><!-- .page-header -->
         <?php
 
         while (have_posts()) :
