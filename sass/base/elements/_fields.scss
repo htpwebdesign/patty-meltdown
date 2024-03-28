@@ -29,7 +29,11 @@ textarea {
 }
 
 select {
-	border: 1px solid $color__border-input;
+	color: $color__text-input-focus;
+    background-color: $color__background-body;
+	border: $border__border;
+	border-radius: $border__radius;
+	padding: 0.25rem 0.375rem;
 }
 
 textarea {
