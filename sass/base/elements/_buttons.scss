@@ -7,14 +7,21 @@ input[type="submit"],
 	border: $border__border;
 	font-weight: 500;
 	border-radius: $border__radius;
+	// background: $color__background-button-gradient;
 	background: $color__background-button;
 	color: $brand__dark;
 	line-height: 1;
 	padding: 0.75rem 1rem;
+	text-decoration: none;
 
 	&:hover {
-		border-color: $color__border-button-hover;
-		background: $color__background-button-hover;
+		border-color: $color__border-button-primary-hover;
+		background: radial-gradient(
+			circle at bottom,
+			$brand__secondary -25%,
+			transparent 50%,
+			transparent
+		), $color__background-button-hover;
 	}
 
 	&:active,
@@ -25,6 +32,27 @@ input[type="submit"],
 }
 
 .button.secondary {
-	background: transparent;
-	border-image: $color__background-button;
+	background: $color__background-body;
+	border: $border__border-button-secondary;
+	// border-color: $color__background-button;
+	// box-shadow: $border__shadow;
+	color: $color__background-button;
+
+	&:hover {
+		border-color: $color__border-button-secondary-hover;
+		// background: $color__background-button-hover;
+		background: radial-gradient(
+			circle at bottom,
+			$brand__accent -50%,
+			transparent 50%,
+			transparent
+		), 
+		// $color__background-button-hover;
+	}
+
+	&:active,
+	&:focus {
+		border-color: $color__border-button-focus;
+		box-shadow: $border__shadow;
+	}
 }

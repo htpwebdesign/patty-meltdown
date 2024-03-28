@@ -24,10 +24,7 @@ get_header();
 
 	<?php
 	while (have_posts()) :
-		the_post();
-
-		// get_template_part( 'template-parts/content', 'page' );			
-
+		the_post();	
 	?>
 
 		<section class="about-founders">
@@ -65,12 +62,12 @@ get_header();
 			<?php
 			if (function_exists('get_field')) {
 				if (get_field('cta_text') && get_field('cta_link')) {
-					echo '<a href="' . esc_url(get_field('cta_link')) . '">' . get_field('cta_text') . '</a>';
+					echo '<a class="button primary" href="' . esc_url(get_field('cta_link')) . '">' . get_field('cta_text') . '</a>';
 				}
 			}
 			if (function_exists('get_field')) {
 				if (get_field('cta_giftcard') && get_field('cta_giftcard_link')) {
-					echo '<a href="' . esc_url(get_field('cta_giftcard_link')) . '">' . get_field('cta_giftcard') . '</a>';
+					echo '<a class="button secondary" href="' . esc_url(get_field('cta_giftcard_link')) . '">' . get_field('cta_giftcard') . '</a>';
 				}
 			}
 
