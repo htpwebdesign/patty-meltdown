@@ -15,6 +15,7 @@ get_header();
 
 	<section class="error-404 not-found">
 		<h1 class="page-title"><?php esc_html_e('Oops! That page can&rsquo;t be found.', 'patty-meltdown'); ?></h1>
+		<a class="button primary" <?php echo get_home_url(); ?>">Back to Home</a>
 	</section><!-- .error-404 -->
 
 </main><!-- #main -->
