@@ -1,6 +1,6 @@
 // MENU ICON
 .menu-toggle {
-	path: $color__text-main;
+	stroke: $color__text-main;
 	color: $color__text-main;
 	background-color: transparent;
 	text-transform: uppercase;
@@ -19,6 +19,21 @@
     text-decoration: none;
     cursor: pointer;
 	border-radius: 0;
+
+	&:hover {
+		background: radial-gradient(
+			circle at bottom,
+			$brand__accent -50%,
+			transparent 50%,
+			transparent
+		);
+	}
+
+	&:active,
+	&:focus {
+		outline: $border__border;
+		box-shadow: $border__shadow;
+	}
 
 	svg path {
 		fill:none;
@@ -54,10 +69,6 @@
 // NAVIGATION
 .main-navigation {
 	display: block;
-	// position: absolute;
-	// top: 52px;
-	// right: 0;
-	// z-index: 1000;
 		
 	ul {
 		list-style: none;
@@ -103,29 +114,67 @@
 
 	li {
 		position: relative;
+	}
 
-		&:hover > a,
-		&.focus > a {
+	.menu-header-menu-container a {
+		background: $brand__accent;
+		
+		&:hover,
+		&:active,
+		&:focus {
+			background: radial-gradient(
+				circle at left,
+				$brand__accent -45%,
+				$brand__accent75,
+				$brand__accent50
+			);
+		}
+
+		&:active,
+		&:focus {
+			outline: $border__border;
 		}
 	}
 
 	a {
-		display: block;
 		color: $color__text-main;
+		padding: 1rem;
+		display: block;
 		font-size: 1.25rem;
+		text-align: right;
 		font-weight: 700;
 		text-decoration: none;
 		text-transform: uppercase;
-		padding: 1.25rem;
-	}
 
-	.current_page_item > a,
-	.current-menu-item > a,
-	.current_page_ancestor > a,
-	.current-menu-ancestor > a {
 	}
 
 	.site-header-cart {
+		position: relative;
+		right: 4rem;
+		
+		li a {
+			color: $color__text-main;
+			display: flex;
+			flex-direction: column;
+			line-height: 1;
+			font-size: 1rem;
+			text-align: right;
+
+			&:hover {
+				background: radial-gradient(
+					circle at bottom,
+					$brand__accent -50%,
+					transparent 50%,
+					transparent
+				);
+			}
+		
+			&:active,
+			&:focus {
+				outline: $border__border;
+				box-shadow: $border__shadow;
+			}
+		}
 	}
 }
 
@@ -138,19 +187,17 @@
 	top: 4rem;
 	
 	ul {
-		background-color: $color__background-body;
+		background: $color__background-body;
 	}
 
-	.nav-menu
-	// .site-header-cart 
-	{
-		background-color: $brand__secondary;
+	.nav-menu {
+		background-color: $color__background-body;
 		list-style: none;
 		padding: 0;
 		margin: 0;
-		text-align: right;
-
+		
 		a {
+			text-align: center;
 			display: block;
 		}
 	}
@@ -160,60 +207,60 @@
 	}
 }
 
-// .main-navigation ul {
-// 	display: none;
-// 	list-style: none;
-// 	margin: 0;
-// 	padding-left: 0;
-// 	background-color: $color__background-body;
-
-// 	li {
-// 		position: relative;
-// 	}
-	
-// 	li.current-menu-item > a,
-// 	li.current_page_item > a,
-// 	li:hover > a,
-// 	li.focus > a {
-// 		background-color: $brand__secondary;
-// 	}
-
-// 	a {
-// 		padding: 1rem;
-// 		display: block;
-// 		font-size: 1em;
-// 		text-decoration: none;
-// 		text-align: center;
-// 		font-weight: 700;
-// 		color: $color__text-main;
-// 		text-transform: uppercase;
-// 	}
-// }
-
-@include mq(em(800)) {
-	.menu-item-home,
-	.menu-item-242,
-	.menu-toggle {
-		display: none;
-	}
-
-	.site-header-cart {
-		display: block;
-	}
-
-	.main-navigation {
+@include mq(em(750)) {
+	.main-navigation,
+	.main-navigation.toggled {
 		width: auto;
-		position: relative;
-		top: 0;
-		align-self: center;
-		margin-left: auto;
-		height: 52px;
-	    line-height: 52px;
+
+		.menu-item-home,
+		.menu-item-242,
+		.menu-toggle {
+			display: none;
+		}
+	
+		ul {
+			background: transparent;
+		}
 
 		.header-nav {
 			display: flex;
+			
+			.site-header-cart,
+			.menu-header-menu-container {
+				display: block;
+				position: static;
+
+				li {
+					position: static;
+	
+					a {
+						font-size: 1rem;
+						height: 4rem;
+						display: flex;
+						flex-direction: column;
+						justify-content: center;
+						background: transparent;
+
+						&:hover {
+							background: radial-gradient(
+								circle at bottom,
+								$brand__accent -50%,
+								transparent
+							);
+						}
+					
+						&:active,
+						&:focus {
+							outline: $border__border;
+							box-shadow: $border__shadow;
+						}
+					}
+				}
+			}
 		}
 
+
+		
 		ul {
 			display: flex;
 
@@ -234,18 +281,10 @@
 					text-align: left;
 				}
 
-				a:hover {
-					background-color: #305c9f;
-				}
-
 				li:hover > ul,
 				li.focus > ul {
 					left: 100%;
 					top: 0;
-				}
-	
-				li:hover > ul,
-				li.focus > ul {
 					left: auto;
 				}
 			}

@@ -30,9 +30,15 @@ header.site-header {
             }
         }
 
-        @include mq(em(520)) {
+        @include mq(em(450)) {
             .site-title {
                 display:block;
+            }
+        }
+
+        @include mq(em(520)) {
+            .site-title a {
+                font-size: 2rem;
             }
         }
     }
