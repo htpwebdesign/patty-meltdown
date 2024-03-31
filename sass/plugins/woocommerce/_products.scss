@@ -1,3 +1,5 @@
+@import "../../abstracts/mixins/mixins";
+
 ul.products {
   margin: 0;
   padding: 1rem;
@@ -31,7 +33,6 @@ ul.products {
 .drinks-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  justify-content: space-between;
   gap: 0.7rem;
   margin: 0 auto;
 }
@@ -41,6 +42,15 @@ ul.products {
 
 .product-grid li h3 {
   margin: 0;
+}
+
+@include mq(em(540)) {
+  .signature-burgers-grid,
+  .sides-grid,
+  .drinks-grid {
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+  }
 }
 
 // @media screen and (min-width: 48em) {
