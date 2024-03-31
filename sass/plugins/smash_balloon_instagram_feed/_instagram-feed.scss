@@ -1,0 +1,49 @@
+#sb_instagram span.sbi_follow_btn.sbi_custom a {
+	border: $border__border;
+	font-weight: 500;
+    font-size: 1rem;
+	border-radius: $border__radius;
+	background: $color__background-button     !important;
+	color: $brand__dark;
+	padding: 0.75rem 1rem;
+	text-decoration: none;
+
+    &:hover {
+        color: $brand__dark;
+        border-color: $color__border-button-primary-hover;
+        background: radial-gradient(
+            circle at bottom,
+            $brand__secondary -25%,
+            transparent 50%,
+            transparent
+        ), $color__background-button-hover !important;
+        box-shadow: none;
+    }
+
+    &:active,
+    &:focus {
+        border-color: $color__border-button-focus;
+        box-shadow: $border__shadow;
+    }
+
+    svg path {
+        fill: $color__text-main;
+    }
+
+    svg:not(:root).svg-inline--fa {
+        height: 1.125rem;
+        width: 1.125rem;
+    }
+}
+
+#sb_instagram #sbi_mod_error {
+    background-color: $color__background-body;
+    color: $color__text-main;
+    border: $brand__accent50 0.125rem solid;
+    border-left: 0.25rem solid $brand__accent;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 0.5rem $brand__accent50;
+    max-width: max-content;
+    margin: 0 auto;
+    float: none;
+}
