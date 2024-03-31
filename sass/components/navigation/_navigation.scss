@@ -302,6 +302,23 @@
 	}
 }
 
+.admin-bar {
+	.menu-toggle {
+		top: 2.875rem;
+	}
+	.menu-header-menu-container .nav-menu {
+		position: relative;
+		top: 2.875rem;
+	}
+
+	@include mq(em(750)) {
+		.menu-header-menu-container .nav-menu {
+			top: 0;
+		}
+	}
+}
+
+
 .comment-navigation,
 .posts-navigation,
 .post-navigation {
