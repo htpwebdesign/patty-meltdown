@@ -16,3 +16,26 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+
+.testimonials-section{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+}
+
+.testimonials-title{
+	font-size: 1.5rem;
+}
+
+@include mq(28.125em){
+	.testimonials-section{
+
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between; 
+	}
+
+
+
+}
