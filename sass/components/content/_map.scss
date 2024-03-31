@@ -1,0 +1,20 @@
+.acf-map {
+  width: 90%;
+  height: 400px;
+  border: $brand__accent solid 2px;
+  margin: 0 auto;
+}
+.acf-map img {
+  max-width: inherit !important;
+}
+
+@media (min-width: 62.5em) {
+  .acf-map {
+    width: 100%;
+  }
+}
+
+.contact-map-title,
+.contact-map-text {
+  color: $brand__accent;
+}

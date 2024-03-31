@@ -13,7 +13,8 @@
 ?>
 
 <footer id="colophon" class="site-footer full-bleed">
-	<div class="site-info">
+	<div class="site-info ">
+		
 		<nav class="footer-left">
 			<?php
 			wp_nav_menu(
@@ -24,6 +25,7 @@
 			?>
 		</nav>
 
+
 		<nav class="footer-right">
 			<?php
 			wp_nav_menu(
@@ -33,7 +35,7 @@
 			);
 			?>
 		</nav>
-
+		
 	</div><!-- .site-info -->
 </footer><!-- #colophon -->
 </div><!-- #page -->

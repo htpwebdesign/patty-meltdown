@@ -252,7 +252,10 @@ add_action('init', 'pmd_register_custom_post_types');
 //register google map
 function my_acf_google_map_api($api)
 {
-	$api['key'] = 'AIzaSyC5TXwEkIUMHlP-UzWM3vZQl87IL5CmJZM';
+	$api['key'] = 'AIzaSyC5TXwEkIUMHlP-UzWM3vZQl87IL5CmJZM';	
+
+	$api['map_id'] = '56bccdd894bdd9d3';
+
 	return $api;
 }
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
@@ -264,14 +267,7 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 function wpdocs_map_scripts() {
 
 	if ( is_page('23') ) {
-		// Enqueue CSS
-        wp_enqueue_style(
-			'map-styles', 
-			get_template_directory_uri() . '/css/map.css',
-			array(), 
-			'1.0.0' 
-		);
-
+		
 		// Enqueue JavaScript
         wp_enqueue_script(
 			'google-map-script', 

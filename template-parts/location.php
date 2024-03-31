@@ -6,8 +6,8 @@
                 
                 <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" 
                                     data-lng="<?php echo esc_attr($location['lng']); ?>">
-                    <p><?php the_sub_field('title')?></p>
-                    <p><?php echo esc_html($location['address'])?></p>
+                    <h3 class="contact-map-title"><?php the_sub_field('title')?></h3>
+                    <p class="contact-map-text"><?php echo esc_html($location['address'])?></p>
                 </div>
         <?php endwhile; ?>
         </div>

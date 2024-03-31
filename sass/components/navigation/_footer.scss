@@ -1,3 +1,19 @@
 .site-footer {
-    background: $brand__accent;
+  background: $brand__accent;
+  padding-top: 1rem;
+}
+
+body .site .full-bleed:last-child > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left ul,
+.footer-right ul {
+  list-style: none;
+}
+
+.site-info nav {
+  padding: 1rem;
 }
