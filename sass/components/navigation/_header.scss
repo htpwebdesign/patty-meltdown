@@ -1,13 +1,11 @@
-header.site-header {
+header.site-header .header-content {
     background-color: $color__background-body;
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 4rem;
-    // border-top: 3px solid $brand__accent;
 
     .site-branding {
-        // width: max-content;
         display: flex;
         align-items: center;
 
