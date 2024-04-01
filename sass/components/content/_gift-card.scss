@@ -1,43 +1,49 @@
-//image, had to use inspect to find this class 
-.attachment-woocommerce_thumbnail.size-woocommerce_thumbnail{
+//image, had to use inspect to find this class
+.gift-card
+  ul
+  li
+  a
+  .attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
+  width: 100%;
+  height: 12rem;
+  opacity: 50%;
+  object-fit: cover;
+}
+
+.giftcard-section {
+  position: relative;
+}
+
+.giftcard-overlay {
+  font-size: 1rem;
+  position: absolute;
+  text-align: center;
+  top: 0rem;
+  z-index: 102;
+  width: 100%;
+}
+
+.giftcard-overlay .giftcard-title {
+  margin: 0;
+}
+
+//
+.giftcard-title {
+}
+
+.page-id-17 main .giftcard-section .gift-card ul li a h3 {
+  display: none;
+}
+
+@media (min-width: 62.5em) {
+  //trying to expand the photo
+
+  .gift-card
+    ul
+    li
+    a
+    .attachment-woocommerce_thumbnail.size-woocommerce_thumbnail {
     width: 100%;
-    height: 12rem;
-    opacity: 50%;
     object-fit: cover;
- }
-
- .giftcard-section{
-    position: relative;
- }
- 
- .giftcard-overlay{
-     font-size: 1rem;
-     position: absolute;
-     text-align: center;
-     top: 0rem;
-     z-index: 102;
-     width: 100%;
- }
-
- .giftcard-overlay .giftcard-title{
-    margin: 0;
- }
-
- 
- // 
- .giftcard-title{
-     
- }
-
- .page-id-17 main .giftcard-section .gift-card ul li a h3{
-    display: none;
- }
- 
- @media (min-width: 62.5em){
-    //trying to expand the photo 
-     .attachment-woocommerce_thumbnail.size-woocommerce_thumbnail{
-         width: 100%;
-         object-fit: cover;
- 
-     }
- }
+  }
+}

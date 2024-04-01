@@ -1,9 +1,8 @@
 @import "../../abstracts/mixins/mixins";
 
-post-type-archive post-type-archive-product main ul.products {
+.post-type-archive-product .site main .products {
   margin: 0;
   padding: 1rem;
-
   li.product {
     list-style: none;
     position: relative;
@@ -18,13 +17,45 @@ post-type-archive post-type-archive-product main ul.products {
     }
   }
 }
+.post-type-archive-product .site main .products section div li a {
+  text-decoration: none;
+}
+
+.columns-4 {
+  display: flex;
+  flex-direction: column;
+}
+
+.byob {
+  order: 1;
+}
+
+.signature-burgers {
+  order: 2;
+}
+
+.drinks {
+  order: 3;
+}
+.sides {
+  order: 5;
+}
+
+.combos {
+  order: 4;
+}
+
+.gift-card {
+  order: 6;
+}
 
 .woocommerce-loop-product__link {
   display: flex;
   flex-direction: column;
 }
 .byob li a h3,
-.byob li a .price {
+.byob li a .price,
+.gift-card li a h3 {
   display: none;
 }
 
@@ -36,6 +67,27 @@ post-type-archive post-type-archive-product main ul.products {
   gap: 0.7rem;
   margin: 0 auto;
 }
+
+.products section h2 {
+  text-align: center;
+}
+
+.byob-grid li a img,
+.gift-card-grid li a img,
+.combos-grid li a img {
+  width: 20rem;
+  height: auto;
+}
+
+.combos-grid,
+.gift-card-grid,
+.byob-grid {
+  display: flex;
+  column-gap: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+
 .attachment-woocommerce_thumbnail {
   width: 100%;
 }
@@ -44,7 +96,7 @@ post-type-archive post-type-archive-product main ul.products {
   margin: 0;
 }
 
-@include mq(em(540)) {
+@include mq(540px) {
   .signature-burgers-grid,
   .sides-grid,
   .drinks-grid {
@@ -53,6 +105,14 @@ post-type-archive post-type-archive-product main ul.products {
   }
 }
 
+@include mq(1024px) {
+  .signature-burgers-grid,
+  .sides-grid,
+  .drinks-grid {
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+  }
+}
 // @media screen and (min-width: 48em) {
 //   ul.products {
 //     li.product {
