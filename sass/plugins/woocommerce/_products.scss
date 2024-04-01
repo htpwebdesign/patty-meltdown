@@ -68,10 +68,6 @@
   margin: 0 auto;
 }
 
-.products section h2 {
-  text-align: center;
-}
-
 .byob-grid li a img,
 .gift-card-grid li a img,
 .combos-grid li a img {
@@ -84,8 +80,6 @@
 .byob-grid {
   display: flex;
   column-gap: 1rem;
-  text-align: center;
-  justify-content: center;
 }
 
 .attachment-woocommerce_thumbnail {

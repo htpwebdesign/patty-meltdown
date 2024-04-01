@@ -39,7 +39,7 @@ get_header();
                                 setup_postdata($post); ?>
                                 <article class="swiper-slide">
                                     <a href="<?php the_permalink(); ?>">
-                                        <?php the_post_thumbnail('thumbnail'); // Display the post thumbnail with 'thumbnail' size 
+                                        <?php the_post_thumbnail('banner-image'); // Display the post thumbnail with 'thumbnail' size 
                                         ?>
                                     </a>
                                     <div class="carousel-text">
@@ -61,7 +61,7 @@ get_header();
     </section>
 
 
-    <section>
+    <section class="home-featured-menu-section">
         <?php
         if (function_exists('get_field')) {
             $featured_menu_heading = get_field('featured_menu_heading');
@@ -75,7 +75,7 @@ get_header();
         if (function_exists('get_field')) {
             $featured_items = get_field('featured_menu_items');
             if ($featured_items) : ?>
-                <nav>
+                <nav class="home-featured-menu-layout">
                     <?php foreach ($featured_items as $post) :
                         setup_postdata($post); ?>
                         <article class="featured-menu-item">

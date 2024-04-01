@@ -1,6 +1,9 @@
 const swiper = new Swiper(".swiper", {
   loop: true,
   autoHeight: true,
+  autoplay: {
+    delay: 4000,
+  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,

@@ -110,6 +110,10 @@ function patty_meltdown_content_width()
 }
 add_action('after_setup_theme', 'patty_meltdown_content_width', 0);
 
+// Regenerate Thumbnails
+add_image_size("banner-image", 900, 360, true);
+
+
 /**
  * Register widget area.
  *
