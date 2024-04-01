@@ -1,0 +1,25 @@
+.swipper-wrapper {
+  position: relative;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 0;
+}
+
+.swiper .swiper-pagination {
+  position: relative;
+}
+
+.swiper-wrapper {
+  height: 220px;
+}
+.swiper-pagination-bullet-active {
+  background-color: yellow;
+}
+.swiper-pagination,
+.swiper-pagination-bullet {
+  width: 2rem;
+  height: 2rem;
+  background-color: yellow;
+}
