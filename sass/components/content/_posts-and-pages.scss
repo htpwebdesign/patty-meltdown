@@ -22,19 +22,35 @@
 	justify-content: center;
 	flex-direction: column;
 	text-align: center;
+	align-items: center;
+	
 }
 
 .testimonials-title{
 	font-size: 1.5rem;
+	margin-bottom: 1.3rem;
 }
+
+.homepage-testimonials{
+	width: 50%;
+}
+
+
 
 @include mq(28.125em){
 	.testimonials-section{
 
 		display: flex;
 		flex-direction: row;
-		justify-content: space-between; 
+		justify-content: space-evenly;
+	
+		// padding: 20px 0; 
 	}
+
+	.testimonial {
+        width: 30%; 
+        margin: 0 10px; 
+    }
 
 
 
