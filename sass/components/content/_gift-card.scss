@@ -39,6 +39,10 @@
   display: none;
 }
 
+//Removing the listed item bullet point in giftcard 
+.product.type-product.post-59.status-publish.first.instock.product_cat-gift-card.has-post-thumbnail.taxable.shipping-taxable.purchasable.product-type-simple {
+  list-style: none;
+}
 
 
 @media (min-width: 62.5em) {
