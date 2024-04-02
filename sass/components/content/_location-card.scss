@@ -5,7 +5,6 @@
 }
 
 .contact-locations {
-  // Your base styles here
   padding: 0 1.5rem;
   margin: 2rem 0;
 
@@ -17,7 +16,6 @@
     margin: 0;
   }
 
-  // Apply styles within the mixin at 28.125em (450px)
   @include mq(28.125em) {
     display: flex;
     justify-content: space-between;
