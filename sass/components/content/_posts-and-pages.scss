@@ -26,6 +26,10 @@
 	
 }
 
+.testimonials{
+	text-align: left;
+}
+
 .testimonials-title{
 	font-size: 1.5rem;
 	margin-bottom: 1.3rem;
@@ -51,7 +55,7 @@
 
 	.testimonials{
 		display: flex;
-		// gap: 2rem;
+		gap: 2rem;
 	}
 
 
