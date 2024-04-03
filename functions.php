@@ -110,6 +110,10 @@ function patty_meltdown_content_width()
 }
 add_action('after_setup_theme', 'patty_meltdown_content_width', 0);
 
+// Regenerate Thumbnails
+add_image_size("banner-image", 900, 360, true);
+
+
 /**
  * Register widget area.
  *
@@ -118,14 +122,15 @@ add_action('after_setup_theme', 'patty_meltdown_content_width', 0);
 /**
  * Enqueue scripts and styles.
  */
-function patty_meltdown_scripts() {
-	wp_enqueue_style (
+function patty_meltdown_scripts()
+{
+	wp_enqueue_style(
 		'pmd-googlefonts',
 		'https://fonts.googleapis.com/css2?family=Protest+Strike&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap',
 		array(),
 		null
 	);
-	
+
 	wp_enqueue_style(
 		'patty-meltdown-style',
 		get_stylesheet_uri(),
@@ -252,7 +257,7 @@ add_action('init', 'pmd_register_custom_post_types');
 //register google map
 function my_acf_google_map_api($api)
 {
-	$api['key'] = 'AIzaSyC5TXwEkIUMHlP-UzWM3vZQl87IL5CmJZM';	
+	$api['key'] = 'AIzaSyC5TXwEkIUMHlP-UzWM3vZQl87IL5CmJZM';
 
 	$api['map_id'] = '56bccdd894bdd9d3';
 
@@ -264,28 +269,28 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 /**
  * Enqueue scripts and styles
  */
-function wpdocs_map_scripts() {
+function wpdocs_map_scripts()
+{
 
-	if ( is_page('23') ) {
-		
+	if (is_page('23')) {
+
 		// Enqueue JavaScript
-        wp_enqueue_script(
-			'google-map-script', 
-			'https://maps.googleapis.com/maps/api/js?key=AIzaSyC5TXwEkIUMHlP-UzWM3vZQl87IL5CmJZM&callback=Function.prototype', 
-			array(), 
-			'1.0.0', 
+		wp_enqueue_script(
+			'google-map-script',
+			'https://maps.googleapis.com/maps/api/js?key=AIzaSyC5TXwEkIUMHlP-UzWM3vZQl87IL5CmJZM&callback=Function.prototype',
+			array(),
+			'1.0.0',
 			true
 		);
 
 		wp_enqueue_script(
-			'map-script', 
-			get_template_directory_uri() . '/js/map.js', 
-			array('jquery', 'google-map-script'), 
-			'1.0.0', 
+			'map-script',
+			get_template_directory_uri() . '/js/map.js',
+			array('jquery', 'google-map-script'),
+			'1.0.0',
 			true
 		);
-       
-    }
+	}
 }
 add_action('wp_enqueue_scripts', 'wpdocs_map_scripts');
 

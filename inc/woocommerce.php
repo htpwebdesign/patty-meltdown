@@ -22,7 +22,7 @@ function patty_meltdown_woocommerce_setup()
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 150,
+			'thumbnail_image_width' => 250,
 			'single_image_width'    => 300,
 			'product_grid'          => array(
 				'default_rows'    => 3,
@@ -221,18 +221,35 @@ if (!function_exists('patty_meltdown_woocommerce_header_cart')) {
 
 
 add_action('woocommerce_single_product_summary', 'display_product_specifications', 25);
-function display_product_specifications() {
+function display_product_specifications()
+{
 	//ACF field in here
 	$field_value = get_field('dietary_allergen_info');
 
 	// Check if the field has a value
-	if (function_exists('get_field')) { 
-	if ($field_value) {
-		echo '<section class="product-dietary-allergen-info">';
-		echo '<h3>Dietary and allergen information</h3>';
-		echo '<p>' . $field_value . '</p>';
-		echo '</section>';
+	if (function_exists('get_field')) {
+		if ($field_value) {
+			echo '<section class="product-dietary-allergen-info">';
+			echo '<h3>Dietary and allergen information</h3>';
+			echo '<p>' . $field_value . '</p>';
+			echo '</section>';
+		}
 	}
 }
+
+
+add_action('init', 'after_shop_btn', 25);
+function after_shop_btn()
+{
+	remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10);
 }
 
+
+remove_action('woocommerce_shop_loop_item_title', 'woocommerce_template_loop_product_title', 10);
+
+add_action('woocommerce_shop_loop_item_title', 'custom_product_title_markup', 10);
+function custom_product_title_markup()
+{
+	global $product;
+	echo '<h3 class="woocommerce-loop-product__title">' . $product->get_title() . '</h3>';
+}

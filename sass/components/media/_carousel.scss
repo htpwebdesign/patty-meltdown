@@ -1,0 +1,57 @@
+.swipper-wrapper {
+  position: relative;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+.carousel-text a {
+  text-decoration: none;
+  color: white;
+  font-weight: $brand__light;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.swiper {
+  position: relative;
+}
+
+.size-banner-image {
+  opacity: 60%;
+  width: 100%;
+}
+
+.swiper-pagination {
+  position: absolute;
+}
+
+.swiper-wrapper {
+  height: 220px;
+}
+.swiper-pagination-bullet-active {
+  background-color: $brand__primary;
+}
+.swiper-pagination .swiper-pagination-bullet {
+  width: 1rem;
+  height: 1rem;
+  background-color: $brand__secondary;
+}
+
+@include mq(540px) {
+  .carousel-text a {
+    font-size: 2rem;
+  }
+
+  .swiper-pagination .swiper-pagination-bullet {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+@include mq(1024px) {
+  .carousel-text a {
+    font-size: 2.2rem;
+  }
+}

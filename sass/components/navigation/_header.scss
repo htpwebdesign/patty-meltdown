@@ -1,3 +1,43 @@
-.site-header {
-    background-color: $brand__accent;
+header.site-header .header-content {
+    background-color: $color__background-body;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+
+    .site-branding {
+        display: flex;
+        align-items: center;
+
+        .custom-logo-link .custom-logo {
+            height: 3.5rem;
+            width: auto;
+            padding-left: 0.5rem;
+        }
+
+        .site-title {
+            display: none;
+            margin: 0;
+            padding-left: 0.5rem;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-family: $font__header;
+                font-size: 1.5rem;
+                line-height: 1;
+            }
+        }
+
+        @include mq(em(450)) {
+            .site-title {
+                display:block;
+            }
+        }
+
+        @include mq(em(520)) {
+            .site-title a {
+                font-size: 2rem;
+            }
+        }
+    }
 }

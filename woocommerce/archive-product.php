@@ -76,7 +76,6 @@ if (woocommerce_product_loop()) {
 	 * @hooked woocommerce_result_count - 20
 	 * @hooked woocommerce_catalog_ordering - 30
 	 */
-	do_action('woocommerce_before_shop_loop');
 
 	woocommerce_product_loop_start();
 
@@ -100,11 +99,12 @@ if (woocommerce_product_loop()) {
 		$products = new WP_Query($args);
 
 		if ($products->have_posts()) {
+			echo '<section class="' . esc_attr($category->slug) . ' product-section">';
 			echo '<h2 id="' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</h2>';
 
+			echo '<div class="' . esc_attr($category->slug) . '-grid product-grid">';
 			while ($products->have_posts()) {
 				$products->the_post();
-
 				/**
 				 * Hook: woocommerce_shop_loop.
 				 */
@@ -112,6 +112,9 @@ if (woocommerce_product_loop()) {
 
 				wc_get_template_part('content', 'product');
 			}
+			echo '</div>'; // Closing div for products grid
+
+			echo '</section>'; // Close the section element
 
 			// Reset post data
 			wp_reset_postdata();
@@ -126,7 +129,6 @@ if (woocommerce_product_loop()) {
 	 *
 	 * @hooked woocommerce_pagination - 10
 	 */
-	do_action('woocommerce_after_shop_loop');
 } else {
 	/**
 	 * Hook: woocommerce_no_products_found.
