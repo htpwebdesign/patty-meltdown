@@ -27,20 +27,20 @@ get_header();
             </h1>
         </header><!-- .page-header -->
         <?php
-        while (have_posts()) :
+        while (have_posts()):
             the_post();
 
             if (function_exists('get_field')) {
                 $carousel_items = get_field('carousel');
-                if ($carousel_items) : ?>
+                if ($carousel_items): ?>
                     <nav class="featured-carousel-item swiper">
                         <div class="swiper-wrapper">
-                            <?php foreach ($carousel_items as $post) :
+                            <?php foreach ($carousel_items as $post):
                                 setup_postdata($post); ?>
                                 <article class="swiper-slide">
                                     <a href="<?php the_permalink(); ?>">
                                         <?php the_post_thumbnail('banner-image'); // Display the post thumbnail with 'thumbnail' size 
-                                        ?>
+                                                        ?>
                                     </a>
                                     <div class="carousel-text">
                                         <a href="<?php the_permalink(); ?>">
@@ -52,7 +52,7 @@ get_header();
                         </div>
                         <div class="swiper-pagination"></div>
                     </nav>
-        <?php endif;
+                <?php endif;
             }
         endwhile;
         wp_reset_postdata();
@@ -74,14 +74,14 @@ get_header();
         <?php
         if (function_exists('get_field')) {
             $featured_items = get_field('featured_menu_items');
-            if ($featured_items) : ?>
+            if ($featured_items): ?>
                 <nav class="home-featured-menu-layout">
-                    <?php foreach ($featured_items as $post) :
+                    <?php foreach ($featured_items as $post):
                         setup_postdata($post); ?>
                         <article class="featured-menu-item">
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_post_thumbnail('thumbnail'); // Display the post thumbnail with 'thumbnail' size 
-                                ?>
+                                            ?>
                             </a>
                             <a href="<?php the_permalink(); ?>">
                                 <?php the_title(); ?>
@@ -92,7 +92,7 @@ get_header();
                 <?php
                 // Reset the global post object so that the rest of the page works correctly.
                 wp_reset_postdata(); ?>
-        <?php endif;
+            <?php endif;
         }
         ?>
     </section>
@@ -117,29 +117,33 @@ get_header();
     </section>
 
     <section class='giftcard-section'>
-        <div class="giftcard-overlay">
-            <?php
-            if (function_exists('get_field')) {
-                $gift_card_heading = get_field('gift_card_heading');
-                if ($gift_card_heading) {
-                    echo "<h2 class='giftcard-title'>" . $gift_card_heading . "</h2>";
+        <div>
+            <div class="giftcard-overlay">
+                <?php
+                if (function_exists('get_field')) {
+                    $gift_card_heading = get_field('gift_card_heading');
+                    if ($gift_card_heading) {
+                        echo "<h2 class='giftcard-title'>" . $gift_card_heading . "</h2>";
+                    }
                 }
-            }
-            ?>
-            <?php
-            if (function_exists('get_field')) {
-                if (get_field('gift_card_text_blurb')) {
+                ?>
+                <?php
+                if (function_exists('get_field')) {
+                    if (get_field('gift_card_text_blurb')) {
 
-                    echo "<p class='giftcard-text'>";
-                    the_field('gift_card_text_blurb');
-                    echo "</p>";
+                        echo "<p class='giftcard-text'>";
+                        the_field('gift_card_text_blurb');
+                        echo "</p>";
+                    }
                 }
-            }
-
-            echo "</div>";
-            get_template_part("template-parts/gift-card");
-            ?>
-
+                ?>
+            </div>
+            <div class="full-bleed">
+                <?php
+                get_template_part("template-parts/gift-card");
+                ?>
+            </div>
+        </div>
     </section>
 
     <section>
@@ -170,7 +174,7 @@ get_header();
 
         <?php
         get_template_part("template-parts/location")
-        ?>
+            ?>
     </section>
 
 </main><!-- #main -->
