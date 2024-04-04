@@ -43,9 +43,11 @@ do_action('woocommerce_before_main_content');
 
 	// Output navigation links
 	echo '<nav class="product-nav">';
+	echo "<ul class='product-nav-category'>";
+
 	foreach ($categories as $category) {
 		$image_src = wp_get_attachment_image_src(get_term_meta($category->term_id, 'thumbnail_id', true), 'medium');
-
+		echo "<li class='product-nav-items'>";
 		if ($image_src) {
 			echo '<a href="#' . esc_attr($category->slug) . '">';
 			echo '<img src="' . esc_url($image_src[0]) . '" alt="' . esc_attr($category->name) . '">';
@@ -55,7 +57,8 @@ do_action('woocommerce_before_main_content');
 		}
 		echo '<a href="#' . esc_attr($category->slug) . '">' . esc_html($category->name) . '</a>';
 	}
-	echo '</nav>';
+	echo "</ul>";
+	echo '</li>';
 	/**
 	 * Hook: woocommerce_archive_description.
 	 *
