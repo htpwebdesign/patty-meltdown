@@ -300,7 +300,10 @@ function wpdocs_map_scripts()
 			'1.0.0',
 			true
 		);
-	}
+
+		wp_localize_script('map-script', 'mapData', array(
+			'locations' => get_field('map_icon', 23),
+		));}
 }
 add_action('wp_enqueue_scripts', 'wpdocs_map_scripts');
 

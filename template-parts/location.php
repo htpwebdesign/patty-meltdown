@@ -2,7 +2,9 @@
     if( have_rows('locations_map') ): ?>
         <div class="acf-map" data-zoom="16">
             <?php while ( have_rows('locations_map') ) : the_row();?>
-                <?php $location = get_sub_field('map'); ?>
+                <?php $location = get_sub_field('map');
+                $map_icon = get_sub_field('map_icon'); 
+                 ?>
                 
                 <div class="marker" data-lat="<?php echo esc_attr($location['lat']); ?>" 
                                     data-lng="<?php echo esc_attr($location['lng']); ?>">
