@@ -267,3 +267,15 @@ function woocommerce_template_single_excerpt()
 {
 	return;
 }
+<<<<<<< Updated upstream
+=======
+
+
+add_action('woocommerce_before_single_product_summary', 'add_byob_image', 21);
+
+
+function add_byob_image()
+{
+	echo "<p>yes</p>";
+}
+>>>>>>> Stashed changes
