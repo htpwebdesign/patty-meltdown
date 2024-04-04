@@ -1,39 +1,20 @@
 .testimonials-section{
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	text-align: center;
-	align-items: center;
-	
+	padding: 0 0 2rem 0;
 }
 
 .testimonials{
 	text-align: left;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 }
 
-.testimonials-title{
-	font-size: 1.5rem;
-	margin-bottom: 1.3rem;
-}
-
-.homepage-testimonials{
-	width: 50%;
-}
-
-
-
-@include mq(28.125em){
-	.testimonials-section{
-
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
-	
-		// padding: 20px 0; 
-	}
-
+@include mq(em(700)){
 	.testimonials{
-		display: flex;
-		gap: 2rem;
+		flex-direction: row;
+
+		blockquote {
+			width: calc((100% / 3) - 0.25rem);
+		}
 	}
 }

@@ -1,7 +1,16 @@
-quoteblock {
+blockquote {
     border: $brand__accent50 0.125rem solid;
     border-left: 0.25rem solid $brand__accent;
     background-color: $color__background-body;
     border-radius: $border__radius;
-    box-shadow: $border__shadow;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // justify-content: space-between;
+    margin: 0;
+
+    p {
+        margin-top: 0;
+    }
 }
