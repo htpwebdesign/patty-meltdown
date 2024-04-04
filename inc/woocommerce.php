@@ -23,7 +23,7 @@ function patty_meltdown_woocommerce_setup()
 		'woocommerce',
 		array(
 			'thumbnail_image_width' => 250,
-			'single_image_width'    => 300,
+			'single_image_width'    => 450,
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,
@@ -253,3 +253,18 @@ function custom_product_title_markup()
 	global $product;
 	echo '<h3 class="woocommerce-loop-product__title">' . $product->get_title() . '</h3>';
 }
+
+add_action( 'init', 'my_remove_breadcrumbs' );
+ 
+function my_remove_breadcrumbs() {
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+}
+
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+
+function woocommerce_template_single_excerpt() {
+        return;
+}
+
+
+
