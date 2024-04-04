@@ -172,6 +172,16 @@ function patty_meltdown_scripts()
 		);
 	}
 
+	if (is_single(191) && is_product()) {
+		wp_enqueue_script(
+			'build-your-own-burger',
+			get_template_directory_uri() . '/js/byob.js',
+			array(),
+			_S_VERSION,
+			array('strategy' => 'defer'),
+		);
+	}
+
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
 	}
