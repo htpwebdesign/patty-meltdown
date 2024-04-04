@@ -222,6 +222,12 @@
 			background: transparent;
 		}
 
+		.site-header-cart .widget_shopping_cart {
+			top: 4rem;
+			width: max-content;
+			right: calc((100vw - 1024px) / 2);
+		}
+
 		.header-nav {
 			display: flex;
 			
@@ -269,7 +275,7 @@
 				float: left;
 				position: absolute;
 				top: 100%;
-				left: -999em;
+				left: 5rem;
 				z-index: 99999;
 				background-color: #111;
 				flex-direction: column;
