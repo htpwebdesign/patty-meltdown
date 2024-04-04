@@ -254,17 +254,25 @@ function custom_product_title_markup()
 	echo '<h3 class="woocommerce-loop-product__title">' . $product->get_title() . '</h3>';
 }
 
-add_action( 'init', 'my_remove_breadcrumbs' );
- 
-function my_remove_breadcrumbs() {
-    remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+add_action('init', 'my_remove_breadcrumbs');
+
+function my_remove_breadcrumbs()
+{
+	remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0);
 }
 
-remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20);
 
-function woocommerce_template_single_excerpt() {
-        return;
+function woocommerce_template_single_excerpt()
+{
+	return;
 }
 
 
+add_action('woocommerce_before_single_product_summary', 'add_byob_image', 21);
 
+
+function add_byob_image()
+{
+	echo "<p>yes</p>";
+}
