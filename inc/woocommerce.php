@@ -268,10 +268,12 @@ function woocommerce_template_single_excerpt()
 	return;
 }
 
-if (is_single()) {
-	add_action('woocommerce_before_single_product_summary', 'add_byob_image', 21);
-}
+add_action('woocommerce_before_single_product_summary', 'add_byob_image', 21);
+
 function add_byob_image()
 {
-	get_template_part('template-parts/byob-gallery');
+	global $post;
+	if ($post && $post->ID === 191) {
+		get_template_part('template-parts/byob-gallery');
+	}
 }

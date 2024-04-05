@@ -2,7 +2,7 @@
 // A template part for the gift card
 ?>
 
-<div>
+<div class="burger-interactive">
     <div id="top-bun" class="top-bun">
         <img class="brioche-bun" src=" <?php echo get_template_directory_uri() ?>/images/bun-top-brioche-bun.png" alt="bread">
         <img class="lettuce-wrap hidden" src="<?php echo get_template_directory_uri() ?>/images/bun-top-lettuce-wrap.png" alt="lettuce wrap">
