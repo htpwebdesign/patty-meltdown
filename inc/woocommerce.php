@@ -274,5 +274,5 @@ add_action('woocommerce_before_single_product_summary', 'add_byob_image', 21);
 
 function add_byob_image()
 {
-	echo "<p>yes</p>";
+	get_template_part('template-parts/byob-gallery');
 }
