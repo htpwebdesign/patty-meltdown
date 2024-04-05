@@ -1,5 +1,5 @@
 @import "../../abstracts/mixins/mixins";
-
+@import "../../abstracts/variables/colors";
 .post-type-archive-product .site main .products {
   margin: 0;
   padding: 1rem;
@@ -99,11 +99,14 @@
 }
 .product-nav-category li a {
   text-decoration: none;
+  text-align: center;
+  color: $color__link;
 }
 
 .product-nav-items a img {
   max-width: 50px;
 }
+
 .product-nav-category li {
   display: flex;
   flex-direction: column;
