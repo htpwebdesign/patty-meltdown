@@ -315,3 +315,25 @@ get_template_part('template-parts/login');
 
 // dashboard widgets
 get_template_part("template-parts/wp-dashboard");
+
+
+function remove_page_editor()
+{
+	remove_post_type_support('page', 'editor');
+}
+add_action('init', 'remove_page_editor');
+
+
+// Enqueue editor styles
+function my_theme_enqueue_editor_styles()
+{
+	add_editor_style('css/editor-style.css'); // Replace 'editor-style.css' with the path to your editor styles file
+}
+add_action('admin_init', 'my_theme_enqueue_editor_styles');
+
+// Add theme support for editor styles
+function my_theme_add_editor_styles()
+{
+	add_theme_support('editor-styles');
+}
+add_action('after_setup_theme', 'my_theme_add_editor_styles');

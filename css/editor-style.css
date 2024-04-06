@@ -1,0 +1,26 @@
+:root {
+    /* Colors */
+    --light: #fbdbd5;
+    --primary: #ff9d3c;
+    --background: #28110b
+}
+
+/* Block Editor Styling */
+.editor-styles-wrapper {
+    /* Fonts */
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 16px;
+
+    /* Colors */
+    background-color: var(--background);
+    color: var(--light)
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+    color: var(--primary);
+}
