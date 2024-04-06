@@ -22,8 +22,8 @@ function patty_meltdown_woocommerce_setup()
 	add_theme_support(
 		'woocommerce',
 		array(
-			'thumbnail_image_width' => 250,
-			'single_image_width'    => 450,
+			'thumbnail_image_width' => "thumbnail-image",
+			'single_image_width'    => "single-image",
 			'product_grid'          => array(
 				'default_rows'    => 3,
 				'min_rows'        => 1,

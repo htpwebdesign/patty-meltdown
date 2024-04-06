@@ -112,6 +112,8 @@ add_action('after_setup_theme', 'patty_meltdown_content_width', 0);
 
 // Regenerate Thumbnails
 add_image_size("banner-image", 900, 360, true);
+add_image_size("thumbnail-image", 250, 250, true);
+add_image_size("single-image", 450, 450, true);
 
 
 /**
@@ -325,5 +327,3 @@ function pmd_widget_function()
 	echo "<p>Here is some content for the dashboard widget.</p>";
 	echo '<iframe width="400" height="auto" src="' . esc_url('https://www.youtube.com/embed/TVNSGc6ouWw?si=BfpEysR4egu9H3Ys') . '" title="YouTube video player" frameborder="0" allowfullscreen></iframe>';
 }
-
-
