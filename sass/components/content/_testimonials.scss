@@ -1,20 +1,21 @@
-.testimonials-section{
-	padding: 0 0 2rem 0;
+.testimonials-section {
+  padding: 0 0 2rem 0;
 }
 
-.testimonials{
-	text-align: left;
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
+.testimonials {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 2rem;
 }
 
-@include mq(em(700)){
-	.testimonials{
-		flex-direction: row;
+@include mq(em(700)) {
+  .testimonials {
+    flex-direction: row;
 
-		blockquote {
-			width: calc((100% / 3) - 0.25rem);
-		}
-	}
+    blockquote {
+      width: calc((100% / 3) - 0.25rem);
+    }
+  }
 }
