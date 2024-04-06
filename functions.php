@@ -314,16 +314,4 @@ add_action('wp_enqueue_scripts', 'wpdocs_map_scripts');
 get_template_part('template-parts/login');
 
 // dashboard widgets
-
-function pmd_add_dashboard_widgets()
-{
-	wp_add_dashboard_widget("pmd_tutorial", "Video Tutorial", "pmd_widget_function");
-}
-
-add_action('wp_dashboard_setup', 'pmd_add_dashboard_widgets');
-
-function pmd_widget_function()
-{
-	echo "<p>Here is some content for the dashboard widget.</p>";
-	echo '<iframe width="400" height="auto" src="' . esc_url('https://www.youtube.com/embed/TVNSGc6ouWw?si=BfpEysR4egu9H3Ys') . '" title="YouTube video player" frameborder="0" allowfullscreen></iframe>';
-}
+get_template_part("template-parts/wp-dashboard");
