@@ -35,20 +35,17 @@ input[type="submit"],
 .button.secondary {
   background: $color__background-body;
   border: $border__border-button-secondary;
-  // border-color: $color__background-button;
-  // box-shadow: $border__shadow;
   color: $color__background-button;
 
   &:hover {
     border-color: $color__border-button-secondary-hover;
-    // background: $color__background-button-hover;
+
     background: radial-gradient(
       circle at bottom,
       $brand__accent -50%,
       transparent 50%,
       transparent
     );
-    // $color__background-button-hover;
   }
 
   &:active,

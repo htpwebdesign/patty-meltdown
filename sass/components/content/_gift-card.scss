@@ -8,10 +8,7 @@
   height: 12rem;
   opacity: 50%;
   object-fit: cover;
-
 }
-
-
 
 .giftcard-section {
   position: relative;
@@ -28,7 +25,6 @@
   z-index: 102;
   width: 100%;
   height: 100%;
-  // backdrop-filter: blur(5px) brightness(75%);
 }
 
 .giftcard-overlay .giftcard-title {
@@ -44,17 +40,15 @@
   display: none;
 }
 
-//Removing the listed item bullet point in giftcard 
+//Removing the listed item bullet point in giftcard
 .product.type-product.post-59.status-publish.first.instock.product_cat-gift-card.has-post-thumbnail.taxable.shipping-taxable.purchasable.product-type-simple {
   list-style: none;
 }
 
-body .site .full-bleed:last-child > .gift-card{
-grid-column: span 3;
-align-items: stretch;
+body .site .full-bleed:last-child > .gift-card {
+  grid-column: span 3;
+  align-items: stretch;
 }
-
-
 
 @media (min-width: 62.5em) {
   //trying to expand the photo

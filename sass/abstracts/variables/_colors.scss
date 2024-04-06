@@ -1,23 +1,24 @@
-$brand__dark: #28110B;
-// $brand__dark: #220d09;
-$brand__light: #FBDBD5;
-    $brand__light75: #fbdbd575;
-    $brand__light90: #fbdbd590;
-$brand__primary: #FF9D3C;
-// $brand__primary: #ffa851;
-// $brand__primary: #ffae5c;
-// $brand__secondary: #FF6F35;
-// $brand__secondary: #ff8167;
+$brand__dark: #28110b;
+
+$brand__light: #fbdbd5;
+$brand__light75: #fbdbd575;
+$brand__light90: #fbdbd590;
+$brand__primary: #ff9d3c;
+
 $brand__secondary: #ff813d;
 $brand__accent: #932920;
-    $brand__accent50: #93292050;
-    $brand__accent75: #93292075;
+$brand__accent50: #93292050;
+$brand__accent75: #93292075;
 
 $color__background-body: $brand__dark;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: $brand__secondary;
-$color__background-button-gradient: linear-gradient(to right, $brand__secondary, $brand__primary);
+$color__background-button-gradient: linear-gradient(
+  to right,
+  $brand__secondary,
+  $brand__primary
+);
 $color__background-button-hover: $brand__primary;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
@@ -30,7 +31,6 @@ $color__link-visited: $brand__accent;
 $color__link-hover: $brand__secondary;
 $color__text-main: $brand__light;
 
-// $color__border-button: #ccc #ccc #bbb;
 $color__border-button: $brand__accent;
 $color__border-button-primary-hover: $brand__secondary;
 $color__border-button-secondary-hover: $brand__accent;
